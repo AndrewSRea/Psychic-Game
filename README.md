@@ -1,6 +1,8 @@
 # Psychic-Game
 A game which randomly picks a letter, and has the user guess which letter the game has chosen.
+
 Rules:
+
 1. Guess what letter the game is "thinking" by typing the letter on the keyboard.
 2. Wins: will show the number of times the user has guessed the letter correctly.
 3. Losses: will show the number of times the user has failed to guess the letter correctly after exhausting all guesses.
