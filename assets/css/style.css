@@ -1,1 +1,37 @@
+<style>
 
+    * {
+        box-sizing: border-box;
+    }
+
+    body, html {
+        height: 100%;
+        margin: 0;
+    }
+
+    .psychic-brain {
+        background-image: url(../images/psychic_brain.jpg);
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+
+    .psychic-text {
+        position: fixed;
+        top: 45%;
+        left: 40%;
+        margin-top: -50px;
+        margin-left: -100px;
+    }
+
+    h1, p {
+        font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+        font-size: 250%;
+        font-weight: bold;
+        color: #ffffff;
+        text-shadow: 2px 2px 4px #000000;
+    }
+
+</style>
