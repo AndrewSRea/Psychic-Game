@@ -5,11 +5,15 @@ var psychWins = document.getElementById("psychWins");
 var psychLoss = document.getElementById("psychLoss");
 var guessRemain = document.getElementById("guessRemain");
 var numberGuess = document.getElementById("numberGuess");
+
 //creating an array with all keyable letters inside it//
+
 var allLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", 
 	"o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
 //creating variables for the amount of wins and losses, count starting at 0//
 //(guesses starting at 9 and counting down)//
+
 var winsCount = 0;
 var lossesCount = 0;
 var defaultGuessRemain = 9;
@@ -21,6 +25,7 @@ var guessArray = []; //amount of guesses go into the empty guessArray
 //Math.random generates a number between 1 and 26--each letter assigned a number in the array//
 //Math.floor is used to specifically round a number down (to the assigned array numbers, 0 to 25)//
 //number, or rather, assigned letter, gets stored in randomLetter//
+
 var getRandomLetter = function () {
 	randomLetter = allLetters[Math.floor(Math.random() * allLetters.length)]
 	console.log(randomLetter);
@@ -35,17 +40,33 @@ var displayStats = function () {
 	guessRemain.innerHTML = "Remaining Guesses: " + guessRemainCount
 	numberGuess.innerHTML = "Number of Guesses: " + guessArray
 }
+
+//resetGame function to reset the game and empty the guessArray, set the var guessRemainCount back to 9//
+//and retrieve a new random letter for the currentLetter//
+
 var resetGame = function () {
 	guessArray = [];
 	guessRemainCount = defaultGuessRemain;
 	currentLetter = getRandomLetter();
 }
+
+//the "userWon" if the userLetter matches the currentLetter//
+
 var userWon = function (userLetter) {
 	return userLetter === currentLetter 
 }
+
+//the "userLost" if the remaining guesses (guessRemainCount) counts down to 0//
+
 var userLost = function () {
 	return guessRemainCount === 0;
 }
+
+//a random letter is set to the var currentLetter, the "onkeyup" stores the user's keyboard//
+//letter selection in the var userLetter, then gets "pushed" into the guessArray//
+//if the letter is correct, the winsCount goes up 1; if the letter is wrong, the lossesCount...//
+//goes up 1, and in both instances, the game is reset.//
+
 var currentLetter = getRandomLetter();
 displayStats();
 document.onkeyup = function (event) {
